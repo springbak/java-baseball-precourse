@@ -3,10 +3,10 @@ package baseball;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class GameNumber {
-    int gameNumberLength;
+    private int gameNumberLength;
 
     public GameNumber(int length) {
-        gameNumberLength = length;
+        this.gameNumberLength = length;
     }
 
     public String getRandomNumberString() {
@@ -23,5 +23,24 @@ public class GameNumber {
             gameAnswer += pickedNumber;
         }
         return gameAnswer;
+    }
+
+    public void getHintFromUserInput(String input, String gameAnswerNumber, Hint hint) {
+        for (int i = 0; i < input.length(); i++) {
+            checkInputByChar(input,gameAnswerNumber,i,hint);
+        }
+    }
+
+    private void checkInputByChar(String input, String gameAnswerNumber, int i,Hint hint){
+        if(gameAnswerNumber.contains(input.substring(i,i+1))){
+            checkIfCharIsStrike(input,gameAnswerNumber,i,hint);
+        }
+    }
+    private void checkIfCharIsStrike(String input, String gameAnswerNumber, int i,Hint hint){
+        if(gameAnswerNumber.charAt(i)==input.charAt(i)) {
+            hint.setStrike(hint.getStrike() + 1);
+            return;
+        }
+        hint.setBall(hint.getBall() + 1);
     }
 }
