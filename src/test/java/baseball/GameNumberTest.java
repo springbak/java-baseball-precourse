@@ -6,7 +6,18 @@ import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+/**
+ * packageName    : baseball
+ * fileName       : GameNumberTest
+ * author         : BOM
+ * date           : 2022-09-30
+ * description    :
+ * ===========================================================
+ * DATE              AUTHOR             NOTE
+ * -----------------------------------------------------------
+ * 2022-09-30        BOM       최초 생성
+ * 2022-10-02        BOM       getHintFromUserInputTest메서드 추가
+ */
 class GameNumberTest {
     @DisplayName("랜덤한 수의 자리수가 3자리인지, 각 자리수가 서로 다른 숫자인지 확인하는 테스트")
     @Test
